@@ -6,13 +6,13 @@
       if(isset($_GET['id_books'])) : 
         $sql = sprintf("SELECT * FROM books WHERE id = %d", $_GET['id_books']);
         $req = $connect->query($sql);
-        echo $connect->error;
+        //secho $connect->error;
         $arrayDatas['nbhits'] = $req->num_rows;
         
         while($record = $req->fetch_object()) {
             $results[] = $record;
         }
-        $arrayDatas['records'] = $results;
+        $arrayDatas['records'] = (isset($results)) ? $results : "";
         header('Content-Type: application/json');
         echo json_encode($arrayDatas);
       else :

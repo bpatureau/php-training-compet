@@ -11,4 +11,8 @@
     <button class="button is-primary">Confirmer</button>
 </form>
 
+<ul class="list-books">
+
+</ul>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
 <script src="./script/home.js"></script>
