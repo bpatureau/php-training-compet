@@ -3,6 +3,19 @@
     //$_POST='{"nom":"pierre"}';
 
     if($_SERVER['REQUEST_METHOD'] == 'GET'):
+      if(isset($_GET['id_books'])) : 
+        $sql = sprintf("SELECT * FROM books WHERE id = %d", $_GET['id_books']);
+        $req = $connect->query($sql);
+        echo $connect->error;
+        $arrayDatas['nbhits'] = $req->num_rows;
+        
+        while($record = $req->fetch_object()) {
+            $results[] = $record;
+        }
+        $arrayDatas['records'] = $results;
+        header('Content-Type: application/json');
+        echo json_encode($arrayDatas);
+      else :
       $sql = "SELECT * FROM `books`";
 
       $req = $connect->query($sql);
@@ -15,6 +28,7 @@
       $arrayDatas['records'] = $results;
       header('Content-Type: application/json');
       echo json_encode($arrayDatas);
+    endif;
     endif;
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') :
