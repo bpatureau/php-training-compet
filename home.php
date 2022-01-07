@@ -5,7 +5,7 @@
 <div class="field">
   <label class="label">Code du livre</label>
   <div class="control">
-    <input class="input" name="code" type="number" placeholder="Code">
+    <input class="input_isbn" name="code" type="number" placeholder="Code">
   </div>
 </div>
     <button class="button is-primary">Confirmer</button>

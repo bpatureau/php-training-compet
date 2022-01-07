@@ -1,13 +1,12 @@
 .list-book-item {
-  animation: all 2s;
+  margin-bottom: 50px;
+  background-color: rgb(228, 228, 228);
 }
+
 
 .list-book-item::marker {
   content: "📕";
 }
 .list-book-item h2:hover {
   color: rgb(133, 133, 133);
-}
-.hide-bot div {
-  display: none;
 }

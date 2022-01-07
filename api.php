@@ -29,6 +29,7 @@
       header('Content-Type: application/json');
       echo json_encode($arrayDatas);
     endif;
+    
     endif;
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') :
@@ -59,6 +60,15 @@
     endif;
 
     exit;
+
+
+
+
+
+
+
+
+
 
 
     $sql = sprintf("SELECT planning, idPersonnel, idUsers FROM bp_visite WHERE idVisite='%d'",
