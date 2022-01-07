@@ -1,5 +1,8 @@
 let url = "http://localhost/prep-compet/api.php"
 let list_books = document.querySelector(".list-books")
+let modal = document.querySelector(".modal")
+let modalCardTitle = document.querySelector(".modal-card-title")
+let modalDelete = document.querySelector(".delete")
 axios.get(url)
 .then(response => {
   response.data.records.forEach(e => {
@@ -12,12 +15,15 @@ axios.get(url)
 list_books.addEventListener("click", e => {
   e.preventDefault() 
   if(e.target.parentNode.classList.contains("close")) {
+    modal.classList.add("is-active")
+
   axios.get(url, {
     params: {
       id_books: e.target.dataset.id
     }
   })
   .then(response => {
+    modalCardTitle.innerHTML= response.data.records[0].title
     e.target.parentNode.innerHTML = `<li data-id="${response.data.records[0].id}"  class='list-book-item'> <h2 data-id="${response.data.records[0].id}" class="titre">${response.data.records[0].title}</h2> <div><p>author: ${response.data.records[0].authors}</p><p>publisher: ${response.data.records[0].publisher}</p> <p>how much pages: ${response.data.records[0].pageCount}</p><p>description: ${response.data.records[0].description} </p></div></li>`
   }) 
   .catch(error => console.log(error))
@@ -28,6 +34,12 @@ list_books.addEventListener("click", e => {
   }
 })
 
+
+modalDelete.addEventListener("click", e => {
+  e.preventDefault()
+  modal.classList.remove("is-active")
+
+})
 
 //__________
 
@@ -53,3 +65,4 @@ form_main.addEventListener("submit", e => {
   })
   .catch(error => console.log(error))
 })
+

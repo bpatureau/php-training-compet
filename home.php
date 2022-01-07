@@ -10,10 +10,24 @@
 </div>
     <button class="button is-primary">Confirmer</button>
 </form>
-<div>
-  <a href="#" data-lightbox="example-1"><img class="example-image" src="#" alt="image-1" /></a>
-  <a href="#" data-lightbox="example-2" data-title="Optional caption."><img class="example-image" src="#" alt="image-1"/></a>
+
+<div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Modal title</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Content ... -->
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success">Save changes</button>
+      <button class="button">Cancel</button>
+    </footer>
+  </div>
 </div>
+
 <ul class="list-books">
 
 </ul>
