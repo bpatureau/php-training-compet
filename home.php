@@ -10,9 +10,10 @@
 </div>
     <button class="button is-primary">Confirmer</button>
 </form>
-
+<div>
+  <a href="#" data-lightbox="example-1"><img class="example-image" src="#" alt="image-1" /></a>
+  <a href="#" data-lightbox="example-2" data-title="Optional caption."><img class="example-image" src="#" alt="image-1"/></a>
+</div>
 <ul class="list-books">
 
 </ul>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-<script src="./script/home.js"></script>

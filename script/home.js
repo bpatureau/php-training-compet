@@ -36,6 +36,7 @@ let form_main = document.querySelector(".form_main")
 
 form_main.addEventListener("submit", e => {
   e.preventDefault()
+  console.log(input_isbn.value)
   axios.get(`https://www.googleapis.com/books/v1/volumes?q=isbn:${input_isbn.value}`)
 
   .then(response => {
