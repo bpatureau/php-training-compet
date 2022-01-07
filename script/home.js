@@ -44,17 +44,17 @@ form_main.addEventListener("submit", e => {
 
   .then(response => {
     input_isbn.value = ""
-    console.log("response", response.data.items[0].volumeInfo)
-
-      console.log("data", response.data)
+    console.log(response.data.items[0].volumeInfo.title)
+    list_books.innerHTML += `<li class='list-book-item close'> <h2 class="titre">${response.data.items[0].volumeInfo.title}</h2></li>`  
       axios.post(url, 
         response.data
       )
       .then(response => {
-        list_books.innerHTML += `<li data-id="${response.data.id}"  class='list-book-item close'> <h2 data-id="${response.data.id}" class="titre">${response.data.items[0].volumeInfo.title}</h2></li>`
-        
+        console.log(response.data)
+ 
       }
-    )
+      )
+      .catch(error => console.log(error))
     
   })
 })
