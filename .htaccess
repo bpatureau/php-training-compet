@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteRule perdu$ trouve.html [L]
+RewriteRule ^editnews/([0-9]+)$ index.php?view=editnews&edit_news=$1 [L]
+RewriteRule ^([a-zA-Z-]+)$ index.php?view=$1 [L]
+# RewriteRule a-propos$ index.php?view=a-propos [L]
